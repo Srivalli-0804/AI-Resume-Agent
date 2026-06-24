@@ -10,3 +10,6 @@ dist/
 generated/
 
 .vscode/
+
+ai-resume-agent/uploads/
+ai-resume-agent/generated/
