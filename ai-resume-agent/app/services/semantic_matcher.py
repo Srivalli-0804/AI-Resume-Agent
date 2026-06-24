@@ -1,15 +1,15 @@
 from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import cos_sim
 
-model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
-
 
 def semantic_match_score(
     resume_text,
     job_description
 ):
+
+    model = SentenceTransformer(
+        "all-MiniLM-L6-v2"
+    )
 
     resume_embedding = model.encode(
         resume_text,

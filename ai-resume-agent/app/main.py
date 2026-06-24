@@ -326,10 +326,7 @@ async def process_job(
         jd_skills
     )
     
-    semantic_score = semantic_match_score(
-        resume_text,
-        request.job_description
-    )
+    semantic_score = 0
 
     project_score = calculate_project_score(
         resume_document["resume_analysis"].get(
@@ -339,18 +336,7 @@ async def process_job(
     request.job_description
     )
 
-    final_ats_score = round(
-
-    (
-        ats_score * 0.3
-        +
-        semantic_score * 0.4
-        +
-        project_score * 0.3
-    ),
-
-    2
-)
+    final_ats_score = ats_score
     
     # Gap Analysis
     gap_analysis = generate_gap_analysis(
